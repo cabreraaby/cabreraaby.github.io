@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabriela &amp; Justin &hearts; Duo Portfolio</title>
+    <link rel="icon" href="favicon.ico.png">
+    <lin rel="stylesheet" href="style.css">
+    </head>
+    <style>
+        /* ======= BASE STYLES ======= */
+:root {
+    --color-primary: #6c5ce7;
+    --color-secondary: #00b894;
+    --color-accent: #fd79a8;
+    --color-dark: #2d3436;
+    --color-light: #f5f6fa;
+    --color-gabriela: #fd79a8;
+    --color-justin: #00b894;
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+    --transition: all 0.3s ease;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap');
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--color-dark);
+    background-color: var(--color-light);
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+  
+  a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: var(--transition);
+  }
+  
+  a:hover {
+    color: var(--color-accent);
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  /* ======= HEADER ======= */
+  header {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    color: rgb(255,255,173);
+    padding: 2rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  header::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="rgba(255,255,255,0.03)"/></svg>');
+    background-size: 10% 10%;
+    animation: rotate 60s linear infinite;
+    z-index: 0;
+  }
+  
+  @keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 0.5rem;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .tagline {
+    font-size: 1.2rem;
+    font-style: italic;
+    opacity: 0.9;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* ======= NAVIGATION ======= */
+  nav {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 2rem;
+  }
+  
+  nav ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  nav li {
+    margin: 0 0.5rem;
+  }
+  
+  nav a {
+    color: pink;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: var(--transition);
+  }
+  
+  nav a:hover {
+    background-color: rgba(255, 255, 255);
+    color: white;
+  }
+  
+  /* ======= MAIN CONTENT ======= */
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  section {
+    margin-bottom: 4rem;
+    background-color: linen;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    position: relative;
+  }
+  
+  section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: red;
+    border-radius: 8px 8px 0 0;
+  }
+  
+  section h2 {
+    display: inline-block;
+    position: relative;
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  section h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  }
+  
+  /* ======= ABOUT SECTION ======= */
+  .team-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .team-member {
+    text-align: center;
+    padding: 1.5rem;
+    border-radius: 8px;
+    background-color: lightgreen;
+    transition: var(--transition);
+  }
+  
+  .team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+  }
+  
+  .member-photo {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 1.5rem;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 5px solid white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .member-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+  }
+  
+  .team-member:hover .member-photo img {
+    transform: scale(1.05);
+  }
+  
+  .team-member h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .team-member .role {
+    color: var(--color-primary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .university-section {
+    margin-top: 3rem;
+  }
+  
+  .responsive-iframe {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    margin: 1.5rem 0;
+  }
+  
+  .responsive-iframe iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+  
+  /* ======= BLOG SECTION ======= */
+  .blog-post {
+    margin-bottom: 3rem;
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .post-header {
+    padding: 1.5rem;
+    color: white;
+    position: relative;
+  }
+  
+  .post-header.gabirla {
+    background: linear-gradient(135deg, var(--color-gabriela), #e84393);
+  }
+  
+  .post-header.justin {
+    background: linear-gradient(135deg, var(--color-justin), #0984e3);
+  }
+  
+  .post-header h3 {
+    margin-bottom: 0.5rem;
+  }
+  
+  .author-tag {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .post-date {
+    font-size: 0.85rem;
+    opacity: 0.8;
+  }
+  
+  .post-content {
+    padding: 1.5rem;
+  }
+  
+  .post-content h4 {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .image-map-container {
+    margin: 1.5rem 0;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+  
+  .image-map {
+    width: 100%;
+    height: auto;
+    transition: var(--transition);
+  }
+  
+  .image-map:hover {
+    filter: brightness(1.05);
+  }
+  
+  /* ======= PROJECTS SECTION ======= */
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  .project {
+    padding: 1.5rem;
+    border-radius: 8px;
+    background-color: palegoldenrod;
+    transition: var(--transition);
+    border-top: 4px solid var(--color-primary);
+  }
+  
+  .project:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+  }
+  
+  .project h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  
+  .project-roles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .role-tag {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+  
+  .gabiriela-role {
+    background-color: rgba(253, 121, 168, 0.2);
+    color: #e84393;
+  }
+  
+  .justin-role {
+    background-color: rgba(0, 184, 148, 0.2);
+    color: #00b894;
+  }
+  
+  /* ======= EMOJI SECTION ======= */
+  .emoji-columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  
+  .emoji-column {
+    background-color: paleturquoise;
+    padding: 1.5rem;
+    border-radius: 8px;
+  }
+  
+  .emoji-list li {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .emoji {
+    font-size: 2rem;
+    margin-right: 1rem;
+    display: inline-block;
+    transition: var(--transition);
+  }
+  
+  .emoji-list li:hover .emoji {
+    transform: scale(1.2);
+  }
+  
+  /* ======= CONTACT SECTION ======= */
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  
+  input, select, textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    transition: var(--transition);
+  }
+  
+  input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.1);
+  }
+  
+  button {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-block;
+  }
+  
+  button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(108, 92, 231, 0.3);
+  }
+  
+  /* ======= FOOTER ======= */
+  footer {
+    background-color: var(--color-dark);
+    color: white;
+    padding: 3rem 2rem;
+  }
+  
+  .footer-columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto 2rem;
+  }
+  
+  .footer-column h3 {
+    color: white;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+    display: inline-block;
+  }
+  
+  .footer-column h3::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    height: 2px;
+    background: var(--color-primary);
+  }
+  
+  .social-links li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .social-links a {
+    color: rgba(255, 255, 255, 0.7);
+    transition: var(--transition);
+  }
+  
+  .social-links a:hover {
+    color: white;
+    padding-left: 5px;
+  }
+  
+  .copyright {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.85rem;
+    opacity: 0.7;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* ======= RESPONSIVE STYLES ======= */
+  @media (max-width: 768px) {
+    header h1 {
+      font-size: 2.2rem;
+    }
+   
+    .tagline {
+      font-size: 1rem;
+    }
+   
+    section {
+      padding: 1.5rem;
+    }
+   
+    .team-container,
+    .project-grid,
+    .emoji-columns {
+      grid-template-columns: 1fr;
+    }
+   
+    .team-member {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    nav ul {
+      flex-direction: column;
+      align-items: center;
+    }
+   
+    nav li {
+      margin: 0.25rem 0;
+    }
+   
+    header h1 {
+      font-size: 1.8rem;
+    }
+   
+    .member-photo {
+      width: 150px;
+      height: 150px;
+    }
+   
+    .post-header {
+      padding: 1rem;
+    }
+   
+    .post-content {
+      padding: 1rem;
+    }
+  }
+    </style>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <h1>Gabriela &amp; Justin &hearts; Collaborative Portfolio</h1>
+            <p class="tagline">Two minds, one vision &mdash; Creating together</p>
+        </header>
+    
+        <main>
+            <section id="about">
+                <h2>About Us &mdash; The Team</h2>
+                <div class="team-container">
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <img src="img.jpeg" alt="Gabriela's photo">
+                        </div>
+                        <h3>Gabriela Cabrera</h3>
+                        <p class="role">Frontend Developer &amp; Designer</p>
+                        <p>Hello! I&rsquo;m Gabriela, specializing in creating beautiful, intuitive user interfaces. I have a passion for responsive design, accessibility, and creating seamless user experiences. My journey started with graphic design and evolved into web development when I discovered the power of bringing designs to life.</p>
+                    </div>
+                    
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <img src="justin.jpeg" alt="Justin's photo">
+                        </div>
+                        <h3>Justin Borrinaga</h3>
+                        <p class="role">Backend Developer &amp; Database Expert</p>
+                        <p>Hi there! I&rsquo;m Justin, and I love working with server-side technologies and databases. I enjoy solving complex problems, optimizing performance, and ensuring security in web applications. My background in computer science has given me strong analytical skills that complement Gabriela&rsquo;s creative approach.</p>
+                </div>
+            </div>
+            
+            <!-- Map showing university location -->
+            <div class="university-section">
+                <h3>Our University</h3>
+                <p>We met at the Computer Science department of our university where we now collaborate on various projects.</p>
+                <div class="responsive-iframe">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62809.469548076675!2d123.82391912167965!3d10.294432899999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a99bfcc60d650d%3A0x5ee73506c68dd233!2sCebu%20Eastern%20College%20Cebu%20city!5e0!3m2!1sen!2sph!4v1742087218711!5m2!1sen!2sph" 
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+
+        <section id="blog">
+            <h2>Our Blog</h2>
+            
+            <article class="blog-post">
+                <div class="post-header gabirla">
+                    <span class="author-tag">Gabriela's Post</span>
+                    <h3>The Evolution of Frontend Development</h3>
+                    <p class="post-date">March 16, 2025</p>
+                </div>
+                <div class="post-content">
+                    <p>When I started in web development, we were still using tables for layouts and Flash for animations. The landscape has changed dramatically since then, with new frameworks and tools emerging constantly.</p>
+                    
+                    <!-- YouTube Video Related to Interest -->
+                    <h4>My Favorite Design Talk</h4>
+                    <div class="responsive-iframe">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/SdCzIDmfDAA?si=F5-dO6W1bBRYnnr6" title="YouTube video player" frameborder="0"
+                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    
+                    <p>The principles of good design remain constant, but the tools we use keep evolving. I&rsquo;ve been particularly excited about the rise of CSS Grid and the possibilities it opens up for complex layouts without complicated markup.</p>
+                    
+                    <!-- Clickable Image Map -->
+                    <h4>My Recommended Frontend Resources</h4>
+                    <div class="image-map-container">
+                        <img src="https://via.placeholder.com/800x200/3498db/ffffff?text=Frontend+Resources" alt="Frontend Resources" usemap="#frontendmap" class="image-map">
+                        <map name="frontendmap">
+                            <area shape="rect" coords="0,0,400,200" href="https://css-tricks.com/" alt="CSS Tricks" target="_blank" title="CSS Tricks">
+                            <area shape="rect" coords="401,0,800,200" href="https://developer.mozilla.org/en-US/docs/Web/CSS" alt="MDN CSS Docs" target="_blank" title="MDN CSS Docs">
+                        </map>
+                    </div>
+                    <p>Click on the left side for CSS Tricks, and the right side for MDN CSS Documentation.</p>
+                </div>
+            </article>
+            
+            <article class="blog-post">
+                <div class="post-header justin">
+                    <span class="author-tag">Justin's Post</span>
+                    <h3>Backend Architecture for Scalable Applications</h3>
+                    <p class="post-date">March 16, 2025</p>
+                </div>
+                <div class="post-content">
+                    <p>Building applications that can scale is one of the most challenging aspects of backend development. In this post, I want to share some principles I&rsquo;ve learned about designing systems that can grow with your user base.</p>
+                    
+                    <!-- YouTube Video Related to Interest -->
+                    <h4>Great Talk on System Design</h4>
+                    <div class="responsive-iframe">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/m8Icp_Cid5o?si=-sazc6FF0lyvgPEW" title="YouTube video player" frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    
+                    <p>The choice of database technology can significantly impact your application&rsquo;s performance and scalability. I&rsquo;ve found that understanding the trade-offs between different database types is essential for making informed architecture decisions.</p>
+                    
+                    <!-- Clickable Image Map -->
+                    <h4>My Recommended Backend Resources</h4>
+                    <div class="image-map-container">
+                        <img src="https://via.placeholder.com/800x200/27ae60/ffffff?text=Backend+Resources" alt="Backend Resources" usemap="#backendmap" class="image-map">
+                        <map name="backendmap">
+                            <area shape="rect" coords="0,0,400,200" href="https://nodejs.org/en/docs/" alt="Node.js Documentation" target="_blank" title="Node.js Documentation">
+                            <area shape="rect" coords="401,0,800,200" href="https://www.postgresql.org/docs/" alt="PostgreSQL Documentation" target="_blank" title="PostgreSQL Documentation">
+                        </map>
+                    </div>
+                    <p>Click on the left side for Node.js Documentation, and the right side for PostgreSQL Documentation.</p>
+                </div>
+            </article>
+        </section>
+
+        <section id="projects">
+            <h2>Our Collaborative Projects</h2>
+            <div class="project-grid">
+                <article class="project">
+                    <h3>E-commerce Platform</h3>
+                    <div class="project-roles">
+                        <span class="role-tag gabiriela-role">Gabriela: UI/UX, Frontend</span>
+                        <span class="role-tag justin-role">Justin: Backend, Payment Integration</span>
+                    </div>
+                    <p>A comprehensive e-commerce solution with responsive design, secure checkout, and inventory management.</p>
+                </article>
+                <article class="project">
+                    <h3>Social Media Dashboard</h3>
+                    <div class="project-roles">
+                        <span class="role-tag gabriela">Gabriela: Dashboard Design, Data Visualization</span>
+                        <span class="role-tag justin-role">Justin: API Integration, Data Processing</span>
+                    </div>
+                    <p>An analytics tool for social media managers to track engagement metrics across multiple platforms.</p>
+                </article>
+                <article class="project">
+                    <h3>Learning Management System</h3>
+                    <div class="project-roles">
+                        <span class="role-tag gabiriela-role">Gabriela: User Interface, Accessibility</span>
+                        <span class="role-tag jordan-role">Justin: Database Design, User Authentication</span>
+                    </div>
+                    <p>An educational platform designed for universities to manage courses, assignments, and student progress.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="favorite-emojis">
+            <h2>Our Favorite Emojis</h2>
+            <div class="emoji-columns">
+                <div class="emoji-column">
+                    <h3>Gabriela's Picks</h3>
+                    <p>Follow your heart!</p>
+                    <ul class="emoji-list">
+                        <li><span class="emoji">&#x1F3A8;</span> - Artist Palette (U+1F3A8)</li>
+                        <li><span class="emoji">&#x1F4BB;</span> - Laptop (U+1F4BB)</li>
+                        <li><span class="emoji">&#x2728;</span> - Sparkles (U+2728)</li>
+                        <li><span class="emoji">&#x1F308;</span> - Rainbow (U+1F308)</li>
+                        <li><span class="emoji">&#x1F44D;</span> - Heart Suit Emoji</li>
+                        <li><span class="emoji">&#x1F44C;</span> - Heart Suit Emoji</li>
+                    </ul>
+                </div>
+                <div class="emoji-column">
+                    <h3>Justin's Pick</h3>
+                    <ul class="emoji-list">
+                        <li><span class="emoji">&#x1F4BE;</span> - Floppy Disk (U+1F4BE)</li>
+                        <li><span class="emoji">&#x1F916;</span> - Robot (U+1F916)</li>
+                        <li><span class="emoji">&#x1F680;</span> - Rocket (U+1F680)</li>
+                        <li><span class="emoji">&#x1F50D;</span> - Magnifying Glass (U+1F50D)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <p>Interested in working with us? Fill out the form below, and we&rsquo;ll get back to you!</p>
+            <form>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject:</label>
+                    <select id="subject" name="subject">
+                        <option value="project">Project Inquiry</option>
+                        <option value="collaboration">Collaboration Opportunity</option>
+                        <option value="question">General Question</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="team-member">Who would you like to contact?</label>
+                    <select id="team-member" name="team-member">
+                        <option value="both">Both Gabriela & Justin</option>
+                        <option value="gabriela">Gabriela</option>
+                        <option value="justin">Justin</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-columns">
+            <div class="footer-column">
+                <h3>Gabriela</h3>
+                <ul class="social-links">
+                    <li><a href="https://github.com/" target="_blank">GitHub</a></li>
+                    <li><a href="https://linkedin.com/" target="_blank">LinkedIn</a></li>
+                    <li><a href="https://dribbble.com/" target="_blank">Dribbble</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Justin</h3>
+                <ul class="social-links">
+                    <li><a href="https://github.com/" target="_blank">GitHub</a></li>
+                    <li><a href="https://linkedin.com/" target="_blank">LinkedIn</a></li>
+                    <li><a href="https://stackoverflow.com/" target="_blank">Stack Overflow</a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="copyright">&copy; 2025 Gabriela &amp; Justin &bull; All Rights Reserved</p>
+    </footer>
+</body>
+</html>
